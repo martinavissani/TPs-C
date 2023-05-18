@@ -150,11 +150,12 @@ int main(int argc, char *argv[]) {
 	int i;
 	int patente, multa;
 	int acumulador = 0;
-	int total = 50;
+	int total = 5;
 	float porcentaje;
 	int sumaCobrado = 0;
+	int mas40 = 0;
 	
-	for (i = 1; i <= 5; i++) {
+	for (i = 1; i <= total; i++) {
 		printf("Ingrese una patente: ");
 		scanf("%d", &patente);
 		
@@ -163,15 +164,16 @@ int main(int argc, char *argv[]) {
 		
 		if (multa > 40) {
 			acumulador += 1;
+			mas40 += multa;
 		}
 		
-		sumaCobrado = suma + multa;
+		sumaCobrado = sumaCobrado + multa;
 	}
 	
-	porcentaje = acumulador / 5;
+	porcentaje = (float)mas40 / sumaCobrado * 100;
 	
 	
 	printf("\n");
-	printf("La cantidad de montos de multas que superan los 40 pesos son %d %.2f\n", acumulador, porcentaje);
+	printf("La cantidad de montos de multas que superan los 40 pesos son %d, lo cual representa el %.2f del total cobrado \n", acumulador, porcentaje);
 	printf("Se cobraron %d pesos en multas.", sumaCobrado);
 }
