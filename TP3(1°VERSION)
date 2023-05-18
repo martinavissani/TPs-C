@@ -100,6 +100,7 @@ Ejercicio 4: Ingresar 30 valores.Contar cuantos están entre 1 y 10, cuantos ent
 
 #include <stdio.h>
 #include <stdlib.h>
+
 int main(int argc, char *argv[]) {
 	int i;
 	int num;
@@ -108,7 +109,7 @@ int main(int argc, char *argv[]) {
 	float porcentaje1, porcentaje2, porcentaje3, porcentaje4;
 	float grupo1;
 	
-	for (i = 1; i <= 5; i++) {
+	for (i = 1; i <= total; i++) {
 		printf("Ingrese un n%cmero: ", 163);
 		scanf("%d", &num);
 		
@@ -128,11 +129,16 @@ int main(int argc, char *argv[]) {
 		}
 	}
 	
+	porcentaje1 = (float)acumulador1 / total * 100;
+	porcentaje2 = (float)acumulador2 / total * 100;
+	porcentaje3 = (float)acumulador3 / total * 100;
+	porcentaje4 = (float)acumulador4 / total * 100;
+	
 	printf("\n");
-	printf("La cantidad de n%cmeros entre 1 y 10 es %d \n", 163, acumulador1);
-	printf("La cantidad de n%cmeros entre 10 y 20 es %d. \n", 163, acumulador2);
-	printf("La cantidad de n%cmeros entre 20 y 30 es %d. \n", 163, acumulador3);
-	printf("La cantidad de n%cmeros mayores a 30 es %d.", 163, acumulador4);
+	printf("La cantidad de n%cmeros entre 1 y 10 es %d, lo cual representa un %.2f porciento del total. \n", 163, acumulador1, porcentaje1);
+	printf("La cantidad de n%cmeros entre 10 y 20 es %d, lo cual representa un %.2f porciento del total. \n", 163, acumulador2, porcentaje2);
+	printf("La cantidad de n%cmeros entre 20 y 30 es %d, lo cual representa un %.2f porciento del total. \n", 163, acumulador3, porcentaje3);
+	printf("La cantidad de n%cmeros mayores a 30 es %d, lo cual representa un %.2f porciento del total. \n", 163, acumulador4, porcentaje4);
 }
 
 Ejercicio 5: Ingresar la patente y monto de la multa de 50 autos, indicar e imprimir cuántos montos superan los $ 40 y del total cobrado que porcentaje representa la suma de los que superan los $40
